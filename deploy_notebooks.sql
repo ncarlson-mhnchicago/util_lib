@@ -7,7 +7,7 @@
 
 -- Create the Notebook
 CREATE OR REPLACE NOTEBOOK IDENTIFIER('"{{target_db}}"."{{target_schema}}"."{{notebook}}"')
-    FROM '@"{{source_db}}"."{{source_schema}}"."{{source_repo}}"/branches/"{{source_branch}}"/{{notebook}}.ipynb'   
+    FROM '@"{{source_db}}"."{{source_schema}}"."{{source_repo}}"/branches/"{{source_branch}}"/'   
     QUERY_WAREHOUSE = '{{query_wh}}'
     MAIN_FILE = '{{notebook}}.ipynb';
 ALTER NOTEBOOK "{{target_db}}"."{{target_schema}}"."{{notebook}}" ADD LIVE VERSION FROM LAST;
